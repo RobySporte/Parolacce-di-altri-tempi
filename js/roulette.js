@@ -1,4 +1,4 @@
-var cheat_meals = [
+var parolacce = [
 	{ Name: "Lazzarone" },
 	{ Name: "Sciamannato" },
 	{ Name: "Buzzurro" },
@@ -12,14 +12,15 @@ var cheat_meals = [
 	{ Name: "Citrullo" },
 	{ Name: "Meretrice" },
 	{ Name: "Sciocchino" },
-	{ Name: "Canaglia" }
+	{ Name: "Canaglia" },
+	{ Name: "Pezzente" }
 ]
 
 var $roulette = $(".roulette")
 
 $(".spin").on("click", function() {
 	$roulette.removeClass("tada").animate({ "font-size": "16px" }, 0)
-	var total = cheat_meals.length,
+	var total = parolacce.length,
 		selected = Math.floor(Math.random() * total * 5),
 		i = 0
 
@@ -27,7 +28,7 @@ $(".spin").on("click", function() {
 		setTimeout(
 			(function(i) {
 				return function() {
-					$roulette.text(cheat_meals[i % total].Name.toUpperCase())
+					$roulette.text(parolacce[i % total].Name.toUpperCase())
 					if (i === selected) {
 						$roulette.animate({ "font-size": "30px" }, "fast").addClass("tada")
 					}
